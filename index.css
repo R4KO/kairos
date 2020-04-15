@@ -1,0 +1,97 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#bann {
+    border-bottom-style: inset;
+    width: 65%;
+    height: auto;
+}
+
+#titre {
+    color: #3F5065;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid white;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+#avatar {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+}
+
+#outil {
+    color: #334152;
+    font-size: 17px;
+    text-align: center;
+    border: 1px solid white;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+}
+
+#div_geste {
+    text-align: center;
+    color: #3F5065;
+}
+
+.button {
+    width: 200px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: white;
+    padding: 6px;
+    margin: 3px;
+}
+
+.button:hover {
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: white;
+    color: white;
+    padding: 6px;
+    margin: 3px;
+}
+
+#caresse:hover {
+    background-color: #3acf6e;
+}
+
+#caresse:active {
+    background-color: #3acf6e;
+    color: #3acf6e;
+}
+
+#déman:hover {
+    background-color: #3a73cf;
+}
+
+#déman:active {
+    background-color: #3a73cf;
+    color: #3a73cf;
+}
+
+#fix:hover {
+    background-color: #c5cf3a;
+}
+
+#fix:active {
+    background-color: #c5cf3a;
+    color: #c5cf3a;
+}
