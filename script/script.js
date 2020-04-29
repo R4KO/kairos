@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function() {
     const pieces = document.getElementsByTagName('svg');
     for (var i = 0; pieces.length; i++) {
         let _piece = pieces[i];

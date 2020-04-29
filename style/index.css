@@ -67,6 +67,7 @@ body {
     color: white;
     padding: 6px;
     margin: 3px;
+    cursor: pointer;
 }
 
 #caresse:hover {
