@@ -6,12 +6,12 @@
     <title>Analysez les comportements rencontrés</title>
     <link rel="stylesheet" type="text/css" href="style/index.css">
     <link rel="stylesheet" type="text/css" href="style/body.css">
-    <script src="script/script.js"></script>
+
 </head>
 
 <body>
 
-
+    <!-- https://www.youtube.com/watch?v=NWUnbETRfTc ---- Pour les coordonnées JS -->
 
     <header>
         <img id="bann" src="img/banniere.png" alt="Bannière Institut Europpéen de Synergologie">
@@ -25,10 +25,14 @@
 
     <div id="div_geste">
         <h2> Choisissez un type d'autocontact :</h2>
-        <button class="button" id="caresse"> MICROCARESSE </button>
+        <button class="button" id="caresse" onclick="innertest();"> MICROCARESSE </button>
         <button class="button" id="déman"> MICRODÉMANGEAISON </button>
         <button class="button" id="fix"> MICROFIXATION </button>
     </div>
+
+    <div id="position"></div>
+
+
 
 
     <br><br>
@@ -49,6 +53,16 @@
         </div>
     </div>
 
+    <script>
+        var position = document.getElementById('position');
+
+        document.getElementById("avatar").addEventListener('click', function(e) {
+            var posX = e.clientX - this.offsetLeft + window.scrollX;
+            var posY = e.clientY - this.offsetTop + window.scrollY;
+            position.innerHTML = 'Position X : ' + posX + 'px<br />Position Y : ' + posY + 'px';
+        });
+    </script>
+
 
 
 
@@ -56,7 +70,10 @@
         <p>Footer</p>
     </footer>
 
-    <script type="text/javascript" src="scipt.js"></script>
 </body>
+
+
+<script type="text/javascript" src="script/script.js"></script>
+<script type="text/javascript" src="script/inner.js"></script>
 
 </html>
