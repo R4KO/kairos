@@ -59,7 +59,17 @@
         document.getElementById("avatar").addEventListener('click', function(e) {
             var posX = e.clientX - this.offsetLeft + window.scrollX;
             var posY = e.clientY - this.offsetTop + window.scrollY;
-            position.innerHTML = 'Position X : ' + posX + 'px<br />Position Y : ' + posY + 'px';
+
+            var width = document.getElementById("avatar").offsetWidth;
+            var height = document.getElementById("avatar").offsetHeight;
+
+            var posXR = (posX / width) * 1000;
+            var posYR = (posY / height) * 1000;
+
+            position.innerHTML = 'Position X : ' + posX + 'px<br />Position Y : ' + posY + 'px' + ' <br /> Height : ' + height + 'px<br /> Width : ' + width + 'px' + '<br /> posXR : ' + posXR + 'px' + '<br /> posYR : ' + posYR + 'px';
+
+
+
         });
     </script>
 
