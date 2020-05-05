@@ -77,5 +77,10 @@ function addPart(part, index) {
 	console.log(svgElem);
 
 	// créer le path
+	var path = document.createElementNS("SVG", "path");
+	path.setAttribute("d", part.path);
+
+
 	// mettre le path dans
+	svgElem.appendChild(path);
 }
