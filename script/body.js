@@ -59,10 +59,23 @@ function init() {
 	addBodyPartsToPage(bodyParts);
 }
 
-function addBodyPartsToPage(array) {
+function addBodyPartsToPage(arr) {
 	arr.forEach(addPart);
 }
 
 function addPart(part, index) {
+	var xmnls = "http://www.w3.org/2000/svg";
+	console.log(part);
 
+	// créer le svg
+	var svgElem = document.createElement('svg');
+	svgElem.className = part.class;
+	svgElem.style.width = part.width;
+	svgElem.style.height = part.height;
+	svgElem.setAttribute("viewBox", part.viewBox);
+
+	console.log(svgElem);
+
+	// créer le path
+	// mettre le path dans
 }
