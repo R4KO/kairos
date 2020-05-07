@@ -96,3 +96,7 @@ body {
     background-color: #c5cf3a;
     color: #c5cf3a;
 }
+
+img {
+    width: 100%;
+}
