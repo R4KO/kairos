@@ -45,18 +45,24 @@ function init() {
 
 function addClickAttribute(part, index) {
 	console.log(part);
+
 	part.onclick = function(t) {
+		
+		// vider le div human-body
 		while(humanBody.firstChild) {
 			humanBody.removeChild(humanBody.firstChild);
 		}
 
+		// récupérer la section cliquée
 		let element = t.target.getAttribute('data-position');
 		if(element == null) {
+			// au cas où on clique au mauvais endroit
 			element = t.target.parentElement.getAttribute('data-position');
 		}
 
 		console.log(element);
 
+		// chercher les paths des images correspondantes
 		if (bodyParts[element]) {
 			bodyParts[element].forEach(insertImage);
 		}
@@ -66,6 +72,8 @@ function addClickAttribute(part, index) {
 
 function insertImage(part, index) {
 	console.log(part);
+
+	// créée l'image
 	var image = document.createElement('img');
 	image.src = path + part;
 	humanBody.appendChild(image);
