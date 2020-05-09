@@ -97,6 +97,6 @@ body {
     color: #c5cf3a;
 }
 
-img {
-    width: 100%;
+.bodyImage {
+    width: 50%;
 }
