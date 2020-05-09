@@ -102,6 +102,7 @@ body {
 
 .bodyImage {
     height: 400px;
+    padding: 5px;
     width: auto;
     margin: auto;
 }
