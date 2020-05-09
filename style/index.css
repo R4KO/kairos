@@ -1,7 +1,5 @@
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 body {
@@ -97,6 +95,13 @@ body {
     color: #c5cf3a;
 }
 
+#img {
+    display: block;
+    text-align: center;
+}
+
 .bodyImage {
-    width: 50%;
+    height: 400px;
+    width: auto;
+    margin: auto;
 }
