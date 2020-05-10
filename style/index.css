@@ -68,29 +68,29 @@ body {
     cursor: pointer;
 }
 
-#caresse:hover {
+#C:hover {
     background-color: #3acf6e;
 }
 
-#caresse:active {
+#C:active {
     background-color: #3acf6e;
     color: #3acf6e;
 }
 
-#déman:hover {
+#D:hover {
     background-color: #3a73cf;
 }
 
-#déman:active {
+#D:active {
     background-color: #3a73cf;
     color: #3a73cf;
 }
 
-#fix:hover {
+#F:hover {
     background-color: #c5cf3a;
 }
 
-#fix:active {
+#F:active {
     background-color: #c5cf3a;
     color: #c5cf3a;
 }

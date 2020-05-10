@@ -25,10 +25,13 @@
 
     <div id="div_geste">
         <h2> Choisissez un type d'autocontact :</h2>
-        <button class="button" id="caresse" onclick="innertest();"> MICROCARESSE </button>
-        <button class="button" id="déman"> MICRODÉMANGEAISON </button>
-        <button class="button" id="fix"> MICROFIXATION </button>
+        <button class="button" id="C" onclick="innertest();"> MICROCARESSE </button>
+        <button class="button" id="D"> MICRODÉMANGEAISON </button>
+        <button class="button" id="F"> MICROFIXATION </button>
     </div>
+
+    <script>
+    </script>
 
     <div id="position"></div>
 
@@ -53,27 +56,23 @@
     <div id="img"></div>
 
     <script>
-        /*
-                                var position = document.getElementById('position');
+        /*                                                                                          
+                                                                                                                                                                                                        var position = document.getElementById('position');                                                                                                                                                                      document.getElementById("human-body").addEventListener('click', function pos(e) {
+                                                                                                                                                                                                        var posX = e.clientX - this.offsetLeft + window.scrollX;
+                                                                                                                                                                                                        var posY = e.clientY - this.offsetTop + window.scrollY;
 
-                                document.getElementById("human-body").addEventListener('click', function pos(e) {
-                                    var posX = e.clientX - this.offsetLeft + window.scrollX;
-                                    var posY = e.clientY - this.offsetTop + window.scrollY;
+                                                                                                                                                                                                        var width = document.getElementById("human-body").offsetWidth;
+                                                                                                                                                                                                        var height = document.getElementById("human-body").offsetHeight;
 
-                                    var width = document.getElementById("human-body").offsetWidth;
-                                    var height = document.getElementById("human-body").offsetHeight;
+                                                                                                                                                                                                        var posXR = (posX / width) * 1000;
+                                                                                                                                                                                                        var posYR = (posY / height) * 1000;
+                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                        position.innerHTML = 'Position X : ' + posX + 'px<br />Position Y : ' + posY + 'px' + ' <br /> Height : ' + height + 'px<br /> Width : ' + width + 'px' + '<br /> posXR : ' + posXR + 'px' + '<br /> posYR : ' + posYR + 'px';
 
-                                    var posXR = (posX / width) * 1000;
-                                    var posYR = (posY / height) * 1000;
+                                                                                                                                                                                                        });
 
-                                    position.innerHTML = 'Position X : ' + posX + 'px<br />Position Y : ' + posY + 'px' + ' <br /> Height : ' + height + 'px<br /> Width : ' + width + 'px' + '<br /> posXR : ' + posXR + 'px' + '<br /> posYR : ' + posYR + 'px';
-
-                                });
-                                */
+                                                                                                                                                                                                        */
     </script>
-
-
-
 
     <footer class="footer">
         <p>Footer</p>
