@@ -2,8 +2,14 @@ const path = "./img/body/";
 const bodySection = document.getElementsByTagName('svg');
 const humanBody = document.querySelector('#avatar');
 const imageSection = document.querySelector('#img');
+const buttons = document.querySelectorAll('.button');
 
-console.log(humanBody);
+
+const colors = {
+    C: '#3acf6e',
+    D: '#3a73cf',
+    F: '#c5cf3a'
+}
 
 var bodyParts = {
     head: [
@@ -89,6 +95,20 @@ function printPosition(t) {
     position.innerHTML = getPosition(t);
 }
 
+document.addEventListener("DOMContentLoaded", function addclick() {
+    buttons.forEach(function(target) {
+        target.onclick = function(t) {
+            // rendre les boutons blancs
+            buttons.forEach(function(target) {
+                target.style.background = 'white';
+
+            });
+            t.target.style.background = colors[t.target.id];
+            //Ici faire un bodysection = bodysectiontab[t.target.id];
+        }
+    });
+});
+
 function getPosition(e) {
     console.log(e.target);
 
@@ -105,14 +125,4 @@ function getPosition(e) {
     var posYR = Math.round((y / height) * 100 * 100) / 100;
 
     return 'Image ' + e.target.id + '<br />Position X: ' + posXR + ' %<br />Position Y: ' + posYR + ' %';
-}
-
-
-document.addEventListener("click", getButtonValue);
-
-
-function getButtonValue(e) {
-    if (e.target.className == "button") {
-        alert("Button clicked : " + e.target.id);
-    }
 }
