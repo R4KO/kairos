@@ -73,7 +73,6 @@ function addClickAttribute(part, index) {
             bodyParts[element].forEach(insertImage);
         }
     }
-
 }
 
 function insertImage(part, index) {
@@ -95,19 +94,6 @@ function printPosition(t) {
     position.innerHTML = getPosition(t);
 }
 
-document.addEventListener("DOMContentLoaded", function addclick() {
-    buttons.forEach(function(target) {
-        target.onclick = function(t) {
-            // rendre les boutons blancs
-            buttons.forEach(function(target) {
-                target.style.background = 'white';
-
-            });
-            t.target.style.background = colors[t.target.id];
-            //Ici faire un bodysection = bodysectiontab[t.target.id];
-        }
-    });
-});
 
 function getPosition(e) {
     console.log(e.target);
@@ -126,3 +112,20 @@ function getPosition(e) {
 
     return 'Image ' + e.target.id + '<br />Position X: ' + posXR + ' %<br />Position Y: ' + posYR + ' %';
 }
+
+document.addEventListener("DOMContentLoaded", function addclick() {
+    var button
+    buttons.forEach(function(target) {
+        target.onclick = function(t) {
+            // rendre les boutons blancs
+            buttons.forEach(function(target) {
+                target.style.background = 'white';
+
+            });
+            t.target.style.background = colors[t.target.id];
+            button = t.target.id;
+            //console.log(button)  // --> ça marche
+
+        }
+    });
+});
