@@ -5,6 +5,20 @@ const imageSection = document.querySelector('#img');
 const buttons = document.querySelectorAll('.button');
 
 
+
+function Values(){
+   this.action ;
+}
+
+Values.prototype.Setaction = function (Action) {
+   this.action = Action;
+};
+
+Values.prototype.getaction = function () {
+    return this.action;
+};
+ var valeurs =  new Values();
+
 const colors = {
     C: '#3acf6e',
     D: '#3a73cf',
@@ -114,7 +128,7 @@ function getPosition(e) {
 }
 
 document.addEventListener("DOMContentLoaded", function addclick() {
-    var button
+
     buttons.forEach(function(target) {
         target.onclick = function(t) {
             // rendre les boutons blancs
@@ -124,8 +138,20 @@ document.addEventListener("DOMContentLoaded", function addclick() {
             });
             t.target.style.background = colors[t.target.id];
             button = t.target.id;
-            //console.log(button)  // --> ça marche
+            if (button === 'C' || button === 'D' || button === 'F'){
+                valeurs.Setaction(button);
+                console.log(valeurs.getaction()) ; // --> ça marche
+            }else{
+                getButtonValue();
+            }
 
         }
     });
 });
+
+
+function getButtonValue() {
+         window.location.assign("index.html?action="+valeurs.getaction());
+
+}
+
