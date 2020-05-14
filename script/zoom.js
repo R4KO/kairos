@@ -8,7 +8,7 @@ const buttons = document.querySelectorAll('.button');
 
 function Values(){
    this.action=null ;
-    this.body1 = null;
+    this.body1=null;
 
 }
 /**
@@ -82,8 +82,8 @@ function addClickAttribute(part, index) {
             element = t.target.parentElement.getAttribute('data-position');
         }
 
-        console.log(element);
-        valeurs.body1= element;
+       
+        valeurs.body1= converteur(element);
         // chercher les paths des images correspondantes
         if (bodyParts[element]) {
             bodyParts[element].forEach(insertImage);
