@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function addclick() {
 
 
 function getButtonValue() {
-         window.location.assign("index.html?action="+valeurs.getaction());
+         window.location.assign("test.php?action="+valeurs.getaction());
 
 }
 
