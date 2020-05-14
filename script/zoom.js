@@ -7,16 +7,18 @@ const buttons = document.querySelectorAll('.button');
 
 
 function Values(){
-   this.action ;
-}
+   this.action=null ;
+    this.body1 = null;
 
+}
+/**
 Values.prototype.Setaction = function (Action) {
    this.action = Action;
 };
 
 Values.prototype.getaction = function () {
     return this.action;
-};
+};**/
  var valeurs =  new Values();
 
 const colors = {
@@ -81,7 +83,7 @@ function addClickAttribute(part, index) {
         }
 
         console.log(element);
-
+        valeurs.body1= element;
         // chercher les paths des images correspondantes
         if (bodyParts[element]) {
             bodyParts[element].forEach(insertImage);
@@ -139,8 +141,8 @@ document.addEventListener("DOMContentLoaded", function addclick() {
             t.target.style.background = colors[t.target.id];
             button = t.target.id;
             if (button === 'C' || button === 'D' || button === 'F'){
-                valeurs.Setaction(button);
-                console.log(valeurs.getaction()) ; // --> ça marche
+                valeurs.action = button;
+                console.log(valeurs.action) ; // --> ça marche
             }else{
                 getButtonValue();
             }
@@ -151,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function addclick() {
 
 
 function getButtonValue() {
-         window.location.assign("test.php?action="+valeurs.getaction());
+         window.location.assign("test.php?action="+valeurs.action+"&&test="+valeurs.body1);
 
 }
 
