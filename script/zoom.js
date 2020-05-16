@@ -1,49 +1,124 @@
-const path = "./img/body/";
+const chemin = "./img/body/";
 const bodySection = document.getElementsByTagName('svg');
 const humanBody = document.querySelector('#avatar');
 const imageSection = document.querySelector('#img');
 const buttons = document.querySelectorAll('.button');
 
-
 const colors = {
     C: '#3acf6e',
     D: '#3a73cf',
     F: '#c5cf3a'
+};
+
+const definitions = {
+    mouvement: {
+        C: "microcaresses",
+        D: "microdemangeaison",
+        F: "microfixation"
+    }
 }
+
+var path = "";
 
 var bodyParts = {
     head: [
         "tete/head_face.png",
-        "tete/head_back.png",
-        "tete/head_right.png"
+        //"tete/head_back.png",
+        //"tete/head_right.png"
     ],
-
 
     // attention au cou
 
+    shoulder: [
+        "epaule/epaule_face.png"
+    ],
+
     cheast: [
         "torse/torse_face.png",
-        "torse/torse_back.png"
+        //"torse/torse_back.png"
     ],
 
     arm: [
         "bras/bras_face.png",
-        "bras/bras_back.png"
+        //"bras/bras_back.png"
+    ],
+
+    hand: [
+        "mains/mains_face.png"
     ],
 
     // attention au bassin
 
     stomach: [
         "ventre/ventre_face.png",
-        "ventre/ventre_back.png"
+        //"ventre/ventre_back.png"
     ],
 
     legs: [
         "jambes/jambes_face.png",
-        "jambes/jambes_back.png",
-        "jambes/jambes_right.png"
+        //"jambes/jambes_back.png",
+        //"jambes/jambes_right.png"
     ]
-}
+};
+
+/*
+var pointless = {
+    head: [
+        "tete/head_face.png",
+        //"tete/head_back.png",
+        //"tete/head_right.png"
+    ],
+
+    // attention au cou
+
+    shoulder: [
+        "epaule/epaule_face.png"
+    ],
+
+    cheast: [
+        "torse/torse_face.png",
+        //"torse/torse_back.png"
+    ],
+
+    arm: [
+        "bras/bras_face.png",
+        //"bras/bras_back.png"
+    ],
+
+    hand: [
+        "mains/mains_face.png"
+    ],
+
+    // attention au bassin
+
+    stomach: [
+        "ventre/ventre_face.png",
+        //"ventre/ventre_back.png"
+    ],
+
+    legs: [
+        "jambes/jambes_face.png",
+        //"jambes/jambes_back.png",
+        //"jambes/jambes_right.png"
+    ]
+};
+
+var fixation = {
+
+};
+
+var caresse = {
+
+};
+
+var demangeaison = {
+
+};
+
+
+var bodyParts = pointless;
+
+*/
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -52,7 +127,7 @@ function init() {
 }
 
 function addClickAttribute(part, index) {
-    console.log(part);
+    //console.log(part);
 
     part.onclick = function(t) {
 
@@ -114,17 +189,21 @@ function getPosition(e) {
 }
 
 document.addEventListener("DOMContentLoaded", function addclick() {
-    var button
     buttons.forEach(function(target) {
         target.onclick = function(t) {
             // rendre les boutons blancs
             buttons.forEach(function(target) {
                 target.style.background = 'white';
-
             });
-            t.target.style.background = colors[t.target.id];
-            button = t.target.id;
-            //console.log(button)  // --> ça marche
+
+            let id = t.target.id;
+            let mouvement = definitions.mouvement[id];
+
+            t.target.style.background = colors[id];
+            
+            // Pour changer le path des images
+            path = chemin + mouvement + "/";
+            console.log(path);
 
         }
     });
