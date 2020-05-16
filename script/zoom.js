@@ -130,22 +130,29 @@ function addClickAttribute(part, index) {
     //console.log(part);
 
     part.onclick = function(t) {
-
-        // On supprime la div #avatar
-        humanBody.parentNode.removeChild(humanBody);
-
-        // récupérer la section cliquée
-        let element = t.target.getAttribute('data-position');
-        if (element == null) {
-            // au cas où on clique au mauvais endroit
-            element = t.target.parentElement.getAttribute('data-position');
+        if (path === "") {
+            window.alert("Sélectionnez le type d'autocontact");
         }
 
-        console.log(element);
+        else {
 
-        // chercher les paths des images correspondantes
-        if (bodyParts[element]) {
-            bodyParts[element].forEach(insertImage);
+            // On supprime la div #avatar
+            humanBody.parentNode.removeChild(humanBody);
+
+            // récupérer la section cliquée
+            let element = t.target.getAttribute('data-position');
+            if (element == null) {
+                // au cas où on clique au mauvais endroit
+                element = t.target.parentElement.getAttribute('data-position');
+            }
+
+            console.log(element);
+
+            // chercher les paths des images correspondantes
+            if (bodyParts[element]) {
+                bodyParts[element].forEach(insertImage);
+            }
+
         }
     }
 }
@@ -203,7 +210,6 @@ document.addEventListener("DOMContentLoaded", function addclick() {
             
             // Pour changer le path des images
             path = chemin + mouvement + "/";
-            console.log(path);
 
         }
     });
