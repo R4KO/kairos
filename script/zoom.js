@@ -4,20 +4,6 @@ const humanBody = document.querySelector('#avatar');
 const imageSection = document.querySelector('#img');
 const buttons = document.querySelectorAll('.button');
 
-
- var valeurs =  new Values();
-};**/
-    return this.action;
-Values.prototype.getaction = function () {
-};
-   this.action = Action;
-Values.prototype.Setaction = function (Action) {
-/**
-}
-
-    this.body1=null;
-   this.action=null ;
-function Values(){
 const colors = {
     C: '#3acf6e',
     D: '#3a73cf',
@@ -153,11 +139,20 @@ function addClickAttribute(part, index) {
             // On supprime la div #avatar
             humanBody.parentNode.removeChild(humanBody);
 
-        console.log(element);
+            // récupérer la section cliquée
+            let element = t.target.getAttribute('data-position');
+            if (element == null) {
+                // au cas où on clique au mauvais endroit
+                element = t.target.parentElement.getAttribute('data-position');
+            }
 
-        // chercher les paths des images correspondantes
-        if (bodyParts[element]) {
-            bodyParts[element].forEach(insertImage);
+            console.log(element);
+
+            // chercher les paths des images correspondantes
+            if (bodyParts[element]) {
+                bodyParts[element].forEach(insertImage);
+            }
+
         }
     }
 }
@@ -201,21 +196,12 @@ function getPosition(e) {
 }
 
 document.addEventListener("DOMContentLoaded", function addclick() {
-    var button
     buttons.forEach(function(target) {
         target.onclick = function(t) {
             // rendre les boutons blancs
             buttons.forEach(function(target) {
                 target.style.background = 'white';
             });
-            t.target.style.background = colors[t.target.id];
-            button = t.target.id;
-            if (button === 'C' || button === 'D' || button === 'F'){
-                valeurs.action = button;
-                console.log(valeurs.action) ; // --> ça marche
-            }else{
-                getButtonValue();
-            }
 
             let id = t.target.id;
             let mouvement = definitions.mouvement[id];
@@ -228,10 +214,3 @@ document.addEventListener("DOMContentLoaded", function addclick() {
         }
     });
 });
-
-
-function getButtonValue() {
-         window.location.assign("test.php?action="+valeurs.action+"&&test="+valeurs.body1);
-
-}
-
