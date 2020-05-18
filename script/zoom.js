@@ -82,7 +82,7 @@ function addClickAttribute(part, index) {
             element = t.target.parentElement.getAttribute('data-position');
         }
 
-       
+
         valeurs.body1= converteur(element);
         // chercher les paths des images correspondantes
         if (bodyParts[element]) {
