@@ -4,6 +4,22 @@ const humanBody = document.querySelector('#avatar');
 const imageSection = document.querySelector('#img');
 const buttons = document.querySelectorAll('.button');
 
+
+function Values(){
+    this.action=null ;
+    this.body1=null;
+
+}
+/**
+ Values.prototype.Setaction = function (Action) {
+   this.action = Action;
+};
+
+ Values.prototype.getaction = function () {
+    return this.action;
+};**/
+var valeurs =  new Values();
+
 const colors = {
     C: '#3acf6e',
     D: '#3a73cf',
@@ -147,7 +163,7 @@ function addClickAttribute(part, index) {
             }
 
             console.log(element);
-
+            valeurs.body1= converteur(element);
             // chercher les paths des images correspondantes
             if (bodyParts[element]) {
                 bodyParts[element].forEach(insertImage);
@@ -196,6 +212,7 @@ function getPosition(e) {
 }
 
 document.addEventListener("DOMContentLoaded", function addclick() {
+    let button;
     buttons.forEach(function(target) {
         target.onclick = function(t) {
             // rendre les boutons blancs
@@ -210,7 +227,20 @@ document.addEventListener("DOMContentLoaded", function addclick() {
             
             // Pour changer le path des images
             path = chemin + mouvement + "/";
-
+            button = t.target.id;
+            if (button === 'C' || button === 'D' || button === 'F'){
+                valeurs.action = button;
+                console.log(valeurs.action) ; // --> ça marche
+            }else{
+                getButtonValue();
+            }
         }
     });
 });
+
+
+
+function getButtonValue() {
+    window.location.assign("test.php?action="+valeurs.action+"&&test="+valeurs.body1);
+
+}
