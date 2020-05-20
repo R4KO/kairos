@@ -88,15 +88,15 @@ const zones = {
     },
 
     jambes: {
-        72: [31, 14],
-        73: [32, 39],
-        74: [30, 55],
-        75: [31, 83],
-        76: [30, 95],
-        82: [69, 14],
-        83: [66, 39],
-        84: [67, 82],
-        85: [70, 95],
+        "72_++_++_++": [31, 14],
+        "73_++_++_++": [32, 39],
+        "74_++_++_++": [30, 55],
+        "75_++_++_++": [31, 83],
+        "76_++_++_++": [30, 95],
+        "82_++_++_++": [69, 14],
+        "83_++_++_++": [66, 39],
+        "84_++_++_++": [67, 82],
+        "85_++_++_++": [70, 95],
     }
 };
 
@@ -228,6 +228,9 @@ function getZoneFrom(zone, x, y) {
         // on vérifie que les coordonnées du click correspondent à une zone définie dans l'objet zone
         if (checkMarge(x, arr[0], marge) && checkMarge(y, arr[1], marge)) {
             // la zone existe donc on récupère sa key dans l'objet
+            let key = getKeyByValue(zone, arr);
+            valeurs.body1 = key;
+            console.log(key);
             console.log(getKeyByValue(zone, arr));
         }
     });
