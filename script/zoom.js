@@ -77,6 +77,11 @@ var bodyParts = {
     ]
 };
 
+const zones = {
+    72: [31, 14],
+    73: [32, 39],
+};
+
 /*
 var pointless = {
     head: [
@@ -174,8 +179,6 @@ function addClickAttribute(part, index) {
 }
 
 function insertImage(part, index) {
-    console.log(part);
-
     // créée l'image
     var image = document.createElement('img');
     image.src = path + part;
@@ -194,21 +197,51 @@ function printPosition(t) {
 
 
 function getPosition(e) {
-    console.log(e.target);
+    var posXR = getMousePositionX(e);
+    var posYR = getMousePositionY(e);
 
-    var rect = e.target.getBoundingClientRect();
-
-    var x = e.clientX - rect.left;
-    var y = e.clientY - rect.top;
-
-    var width = e.target.offsetWidth;
-    var height = e.target.offsetHeight;
-
-    // on divise par la largeur et hauteur et on arrondie à la 2ème décimale
-    var posXR = Math.round((x / width) * 100 * 100) / 100;
-    var posYR = Math.round((y / height) * 100 * 100) / 100;
+    //console.log(getZoneFrom(posXR, posYR));
+    getZoneFrom(posXR, posYR);
 
     return 'Image ' + e.target.id + '<br />Position X: ' + posXR + ' %<br />Position Y: ' + posYR + ' %';
+}
+
+function getMousePositionX(event) {
+    var rect = event.target.getBoundingClientRect();
+
+    var x = event.clientX - rect.left;
+    var y = event.clientY - rect.top;
+
+    var width = event.target.offsetWidth;
+
+    // on divise par la largeur et hauteur et on arrondie à la 2ème décimale
+    return Math.round((x / width) * 100 * 100) / 100;
+}
+
+
+function getMousePositionY(event) {
+    var rect = event.target.getBoundingClientRect();
+
+    var x = event.clientX - rect.left;
+    var y = event.clientY - rect.top;
+
+    var height = event.target.offsetHeight;
+
+    // on divise par la largeur et hauteur et on arrondie à la 2ème décimale
+    return Math.round((y / height) * 100 * 100) / 100;
+}
+
+function getZoneFrom(x, y) {
+    Object.values(zones).some((arr) => {
+        console.log(arr);
+
+        // get zone number
+        console.log(getKeyByValue(zones, arr));
+    });
+}
+
+function getKeyByValue(object, value) {
+  return Object.keys(object).find(key => object[key] === value);
 }
 
 document.addEventListener("DOMContentLoaded", function addclick() {
