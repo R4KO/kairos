@@ -95,8 +95,9 @@ const zones = {
         "76_++_++_++": [30, 95],
         "82_++_++_++": [69, 14],
         "83_++_++_++": [66, 39],
-        "84_++_++_++": [67, 82],
-        "85_++_++_++": [70, 95],
+        "84_++_++_++": [70, 57],
+        "85_++_++_++": [67, 82],
+        "86_++_++_++": [70, 95],
     }
 };
 
@@ -231,7 +232,6 @@ function getZoneFrom(zone, x, y) {
             let key = getKeyByValue(zone, arr);
             valeurs.body1 = key;
             console.log(key);
-            console.log(getKeyByValue(zone, arr));
         }
     });
 }
