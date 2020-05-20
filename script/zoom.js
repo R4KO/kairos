@@ -170,7 +170,7 @@ function addClickAttribute(part, index) {
                 element = t.target.parentElement.getAttribute('data-position');
             }
 
-            valeurs.body1= converteur(element);
+            //valeurs.body1= converteur(element);
 
             // chercher les paths des images correspondantes
             if (bodyParts[element]) {
@@ -221,7 +221,9 @@ function getZoneFrom(zone, x, y) {
         // on vérifie que les coordonnées du click correspondent à une zone définie dans l'objet zone
         if (checkMarge(x, arr[0], marge) && checkMarge(y, arr[1], marge)) {
             // la zone existe donc on récupère sa key dans l'objet
-            console.log(getKeyByValue(zone, arr));
+            let key = getKeyByValue(zone, arr);
+            values.body1 = key;
+            console.log(key);
         }
     });
 }
