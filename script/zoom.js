@@ -43,7 +43,7 @@ const bodyParts = {
 
     hands: [
         "mains/mains_face.png",
-        "mains/mains_back.png"
+        //"mains/mains_back.png"
     ],
 
     // attention au bassin
