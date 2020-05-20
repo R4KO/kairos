@@ -78,8 +78,10 @@ var bodyParts = {
 };
 
 const zones = {
-    72: [31, 14],
-    73: [32, 39],
+    jambes: {
+        72: [31, 14],
+        73: [32, 39],
+    },
 };
 
 /*
@@ -167,7 +169,7 @@ function addClickAttribute(part, index) {
                 element = t.target.parentElement.getAttribute('data-position');
             }
 
-            console.log(element);
+            //console.log(element);
             valeurs.body1= converteur(element);
             // chercher les paths des images correspondantes
             if (bodyParts[element]) {
@@ -182,8 +184,8 @@ function insertImage(part, index) {
     // créée l'image
     var image = document.createElement('img');
     image.src = path + part;
-    image.className = "bodyImage " + part;
-    image.id = index + 1; // pour avoir le numéro de l'image'
+    image.className = "bodyImage";
+    image.id = part.match(/.*\//)[0].replace("/", ""); // pour récupérer le nom de la partie du corps
     image.addEventListener('click', printPosition);
 
     imageSection.appendChild(image);
@@ -201,7 +203,8 @@ function getPosition(e) {
     var posYR = getMousePositionY(e);
 
     //console.log(getZoneFrom(posXR, posYR));
-    getZoneFrom(posXR, posYR);
+    // pour récupérer la bonne partie du corps
+    getZoneFrom(zones[e.target.id] , posXR, posYR);
 
     return 'Image ' + e.target.id + '<br />Position X: ' + posXR + ' %<br />Position Y: ' + posYR + ' %';
 }
@@ -231,17 +234,26 @@ function getMousePositionY(event) {
     return Math.round((y / height) * 100 * 100) / 100;
 }
 
-function getZoneFrom(x, y) {
-    Object.values(zones).some((arr) => {
-        console.log(arr);
+function getZoneFrom(zone, x, y) {
+    Object.values(zone).some((arr) => {
+        //console.log(arr);
 
-        // get zone number
-        console.log(getKeyByValue(zones, arr));
+        // 5% de marge d'erreur
+        if (checkMarge(x, arr[0], 5) && checkMarge(y, arr[1], 5)) {
+
+            // get zone number
+            console.log(getKeyByValue(zone, arr));
+        }
     });
 }
 
 function getKeyByValue(object, value) {
   return Object.keys(object).find(key => object[key] === value);
+}
+
+// marge représente la marge d'erreur en %
+function checkMarge(number, reference, marge) {
+    return (number > (reference - marge)) && (number < (reference + marge))
 }
 
 document.addEventListener("DOMContentLoaded", function addclick() {
