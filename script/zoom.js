@@ -222,7 +222,7 @@ function getZoneFrom(zone, x, y) {
         if (checkMarge(x, arr[0], marge) && checkMarge(y, arr[1], marge)) {
             // la zone existe donc on récupère sa key dans l'objet
             let key = getKeyByValue(zone, arr);
-            values.body1 = key;
+            valeurs.body1 = key;
             console.log(key);
         }
     });
