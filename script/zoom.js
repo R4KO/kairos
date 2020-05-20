@@ -41,8 +41,9 @@ const bodyParts = {
         //"bras/bras_back.png"
     ],
 
-    hand: [
-        "mains/mains_face.png"
+    hands: [
+        "mains/mains_face.png",
+        "mains/mains_back.png"
     ],
 
     // attention au bassin
