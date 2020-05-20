@@ -71,6 +71,7 @@ const zones = {
 
     torse: {
         "2_P10": [54, 81],
+
     },
 
     bras: {
@@ -88,13 +89,20 @@ const zones = {
     jambes: {
         72: [31, 14],
         73: [32, 39],
+        74: [30, 55],
+        75: [31, 83],
+        76: [30, 95],
+        82: [69, 14],
+        83: [66, 39],
+        84: [67, 82],
+        85: [70, 95],
     }
 };
 
 
-function Values(){
-    this.action=null ;
-    this.body1=null;
+function Values() {
+    this.action = null;
+    this.body1 = null;
 
 }
 
@@ -107,7 +115,7 @@ function Values(){
     return this.action;
 };**/
 
-var valeurs =  new Values();
+var valeurs = new Values();
 
 /** Fonctions primordiales */
 
@@ -130,15 +138,15 @@ document.addEventListener("DOMContentLoaded", function addclick() {
 
             // attribuer la bonne couleur de fond
             t.target.style.background = colors[id];
-            
+
             // Pour changer le path des images il faut altérer le path
             path = chemin + mouvement + "/";
 
             button = t.target.id;
-            if (button === 'C' || button === 'D' || button === 'F'){
+            if (button === 'C' || button === 'D' || button === 'F') {
                 valeurs.action = button;
-                console.log(valeurs.action) ; // --> ça marche
-            }else{
+                console.log(valeurs.action); // --> ça marche
+            } else {
                 getButtonValue();
             }
         }
@@ -155,9 +163,7 @@ function addClickAttribute(part, index) {
         if (path === "") {
             // aucun bouton n'a été cliqué
             window.alert("Sélectionnez le type d'autocontact");
-        }
-
-        else {
+        } else {
 
             // On supprime la div #avatar
             humanBody.parentNode.removeChild(humanBody);
@@ -170,7 +176,7 @@ function addClickAttribute(part, index) {
                 element = t.target.parentElement.getAttribute('data-position');
             }
 
-            //valeurs.body1= converteur(element);
+            valeurs.body1 = converteur(element);
 
             // chercher les paths des images correspondantes
             if (bodyParts[element]) {
@@ -208,7 +214,7 @@ function getPosition(e) {
     var posYR = getMousePositionY(e);
 
     // pour récupérer la bonne partie du corps
-    getZoneFrom(zones[e.target.id] , posXR, posYR);
+    getZoneFrom(zones[e.target.id], posXR, posYR);
 
     return 'Image ' + e.target.id + '<br />Position X: ' + posXR + ' %<br />Position Y: ' + posYR + ' %';
 }
@@ -221,9 +227,7 @@ function getZoneFrom(zone, x, y) {
         // on vérifie que les coordonnées du click correspondent à une zone définie dans l'objet zone
         if (checkMarge(x, arr[0], marge) && checkMarge(y, arr[1], marge)) {
             // la zone existe donc on récupère sa key dans l'objet
-            let key = getKeyByValue(zone, arr);
-            valeurs.body1 = key;
-            console.log(key);
+            console.log(getKeyByValue(zone, arr));
         }
     });
 }
@@ -268,6 +272,6 @@ function checkMarge(number, reference, marge) {
 }
 
 function getButtonValue() {
-    window.location.assign("test.php?action="+valeurs.action+"&&test="+valeurs.body1);
+    window.location.assign("test.php?action=" + valeurs.action + "&&test=" + valeurs.body1);
 
 }
