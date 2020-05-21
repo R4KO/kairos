@@ -1,9 +1,11 @@
 var path = "";
+var otherButtonsFiltered = null;
 const chemin = "./img/body/";
 const bodySection = document.getElementsByTagName('svg');
 const humanBody = document.querySelector('#avatar'); // avatar svg
 const imageSection = document.querySelector('#img'); // section vide qui contiendra les images après le click
 const buttons = document.querySelectorAll('.button'); // type d'autocontact
+const gesteSection = document.getElementById('div_geste');
 const colors = { // pour les boutons
     C: '#3acf6e',
     D: '#3a73cf',
@@ -445,6 +447,10 @@ document.addEventListener("DOMContentLoaded", function addclick() {
             if (button === 'C' || button === 'D' || button === 'F') {
                 valeurs.action = button;
                 console.log(valeurs.action); // --> ça marche
+
+                // dégager les autres boutons
+                otherButtonsFiltered = Array.from(buttons).filter(butt => butt.id != button && butt.id != 'back');
+
             }else if( button === 'back'){
                 window.location.assign("index.html");
             }
@@ -485,6 +491,10 @@ function addClickAttribute(part, index) {
             // faire apparaître le bouton back
             let backButton = document.getElementById("back");
             backButton.style.display = "inline";
+
+            // faire disparaître les autres boutons
+            gesteSection.removeChild(otherButtonsFiltered[0]);
+            gesteSection.removeChild(otherButtonsFiltered[1]);
         }
     }
 }
