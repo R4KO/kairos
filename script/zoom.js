@@ -483,6 +483,11 @@ function addClickAttribute(part, index) {
                 bodyParts[element].forEach(insertImage);
             }
 
+
+            // faire apparaître le bouton back
+            let backButton = document.getElementById("back");
+            console.log(backButton);
+            backButton.style.display = "inline";
         }
     }
 }
