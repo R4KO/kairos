@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
 
 $action = $_GET['action'];
 $test = $_GET['test'];
-$sql = "Select Codification from classification_synergologie where Typedegeste = '".$action."' and  ZoneCorps1 = ".$test." ";
+$sql = "Select Codification from classification_synergologie where Typedegeste = '".$action."' and  ZoneCorps1 = ".$test." ;";
 if (!mysqli_query($conn, $sql)) {
     echo "<script>alert('f')</script>";
     die("Error : " . mysqli_error($conn));

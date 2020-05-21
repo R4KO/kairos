@@ -182,8 +182,7 @@ const zones = {
 
 function Values() {
     this.action = null;
-    this.body1 = null;
-
+    this.strV = null;
 }
 
 /**
@@ -256,8 +255,6 @@ function addClickAttribute(part, index) {
                 element = t.target.parentElement.getAttribute('data-position');
             }
 
-            valeurs.body1 = converteur(element);
-
             // chercher les paths des images correspondantes
             if (bodyParts[element]) {
                 bodyParts[element].forEach(insertImage);
@@ -308,7 +305,7 @@ function getZoneFrom(zone, x, y) {
         if (checkMarge(x, arr[0], marge) && checkMarge(y, arr[1], marge)) {
             // la zone existe donc on récupère sa key dans l'objet
             let key = getKeyByValue(zone, arr);
-            valeurs.body1 = key;
+            valeurs.strV = key;
             console.log(key);
         }
     });
@@ -354,6 +351,6 @@ function checkMarge(number, reference, marge) {
 }
 
 function getButtonValue() {
-    window.location.assign("test.php?action=" + valeurs.action + "&&test=" + valeurs.body1);
+    window.location.assign("test.php?action=" + valeurs.action + "&&test=" + valeurs.strV);
 
 }
