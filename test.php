@@ -33,7 +33,7 @@ $action = $_GET['action'];
 $test = $_GET['test'];
 
 $str = explode("_",$test);
-print_r( explode("_",$test));
+
 
 
 
@@ -46,7 +46,7 @@ for($i=0; $i<sizeof($str);$i++){
        $str[$i] = "= '".$str[$i]."'";
    }
 }
-print_r($str);
+
 
 $zone1 = $str[0];
 $zone2 = $str[1];
@@ -62,6 +62,7 @@ if (!mysqli_query($conn, $sql)) {
 
 $result = mysqli_query($conn, $sql);
 while ($rows = mysqli_fetch_array($result)){
+    echo "oui";
     echo $rows['Codification']."   ".$rows["Horizon_de_sens"]." <br>";
 }
 
