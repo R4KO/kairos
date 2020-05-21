@@ -40,8 +40,6 @@ $str = explode("_",$test);
 for($i=0; $i<sizeof($str);$i++){
    if ($str[$i] == ".."){
         $str[$i] = " IS NULL";
-
-        echo "normalement cette valeur est nulle".$str[$i]."<br>";
     }else {
        $str[$i] = "= '".$str[$i]."'";
    }
@@ -60,11 +58,6 @@ if (!mysqli_query($conn, $sql)) {
     die("Error : " . mysqli_error($conn));
 }
 
-$result = mysqli_query($conn, $sql);
-while ($rows = mysqli_fetch_array($result)){
-    echo "oui";
-    echo $rows['Codification']."   ".$rows["Horizon_de_sens"]." <br>";
-}
 
 ?>
 
@@ -74,23 +67,24 @@ while ($rows = mysqli_fetch_array($result)){
         <td>
             <label>Codification :</label>
         </td>
-        <td>
-            <label>
+
                 <?php
+                $result = mysqli_query($conn, $sql);
                 while ($rows2 = mysqli_fetch_array($result))
                 {
+                    echo " <td> <label>";
                     echo $rows2['Codification'];
-                    echo "</br>";
+                    echo "</br></label></td>";
                 }
                 ?>
-            </label>
-        </td>
+
         <td>
             <label>Définition :</label>
         </td>
         <td>
             <label>
                 <?php
+                $result = mysqli_query($conn, $sql);
                 while ($rows2 = mysqli_fetch_array($result))
                 {
                     echo $rows2['Horizon_de_sens'];

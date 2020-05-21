@@ -66,9 +66,9 @@ const zones = {
         //La on va s'amuser avec la tête
 
         // Micro-caresse
-        "0_F_F_P0": [49, 32],
-        "0_F_F_P2": [58, 35],
-        "0_F_F_P1": [38, 36],
+        "0_F_.._P0": [49, 32],
+        "0_F_.._P2": [58, 35],
+        "0_F_.._P1": [38, 36],
 
     },
 
