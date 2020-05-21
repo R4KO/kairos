@@ -530,7 +530,7 @@ function getZoneFrom(zone, x, y) {
             let key = getKeyByValue(zone, arr);
             valeurs.strV = key;
             console.log(key);
-            window.alert("Zone sélectionnée\nVous pouvez appuyer sur le bouton \"Valider\".");
+            window.location.assign("test.php?action=" + valeurs.action + "&&test=" + valeurs.strV);
         }
     });
 }
