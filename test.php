@@ -74,26 +74,31 @@ if (!mysqli_query($conn, $sql)) {
     </tr>
 
 
-
                 <?php
                 $result = mysqli_query($conn, $sql);
                 while ($rows2 = mysqli_fetch_array($result))
                 {
+                    if(sizeof($rows2)==0){
+                        echo "<script> window.location.history(-1) ;</script>";
+                    }
                     echo "  <tr> <td> <label>";
                     echo $rows2['Codification'];
                     echo "</br></label></td>";
                     echo "<td> <label>";
                     $str2 = explode('_',$rows2['Codification']);
-                    if (isset($str2[5])){
-                        if ( $str2[5] == 56){
-                            echo" Avec la main droite : <br>";
-                        }else if ( $str2[5] == 66){
-                            echo" Avec la main gauche : <br>";
-                        }else if ( $str2[5] == 5666){
-                            echo" Avec les deux mains : <br>";
+                    $maX = sizeof($str2)-1;
+                        if (isset($str2[$maX])){
+                            if ( $str2[$maX] == 56){
+                                echo" Avec la main droite : <br>";
+                            }else if ( $str2[$maX] == 66){
+                                echo" Avec la main gauche : <br>";
+                            }else if ( $str2[$maX] == 5666){
+                                echo" Avec les deux mains : <br>";
+                            }
+
                         }
 
-                    }
+
                     echo $rows2['Horizon_de_sens'];
 
                     echo "</br></label></td>";
@@ -106,6 +111,5 @@ if (!mysqli_query($conn, $sql)) {
 </div>
 </body>
 
-<script type="text/javascript" src="script/zoom.js"></script>
 
 </html>

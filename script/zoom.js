@@ -448,9 +448,7 @@ document.addEventListener("DOMContentLoaded", function addclick() {
             }else if( button === 'back'){
                 window.location.assign("index.html");
             }
-            else {
-                window.location.assign("test.php?action=" + valeurs.action + "&&test=" + valeurs.strV);
-            }
+
         }
     });
 });
@@ -534,6 +532,7 @@ function getZoneFrom(zone, x, y) {
             let key = getKeyByValue(zone, arr);
             valeurs.strV = key;
             console.log(key);
+            alert('stop');
             window.location.assign("test.php?action=" + valeurs.action + "&&test=" + valeurs.strV);
         }
     });
