@@ -162,7 +162,7 @@ const zones = {
         "0_N_4_P1": [46, 67],
 
         //Moustache
-        "0_M_0_..": [49, 70],
+        "0_M_.._P0": [49, 70],
         "0_M_1_P1": [46, 70],
         "0_M_1_P2": [53, 70],
 
@@ -174,7 +174,6 @@ const zones = {
         //Joue
         "0_J_1_P1": [43, 80],
         "0_J_1_P2": [56, 80],
-        "0_J_0_..": [49, 83],
         "0_J_10_..": [49, 86],
 
         //Oreilles
@@ -542,7 +541,7 @@ function getZoneFrom(zone, x, y) {
             let key = getKeyByValue(zone, arr);
             valeurs.strV = key;
             console.log(key);
-            alert('stop');
+
             window.location.assign("test.php?action=" + valeurs.action + "&&test=" + valeurs.strV);
         }
     });

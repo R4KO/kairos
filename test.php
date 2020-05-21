@@ -79,7 +79,7 @@ if (!mysqli_query($conn, $sql)) {
                 while ($rows2 = mysqli_fetch_array($result))
                 {
                     if(sizeof($rows2)==0){
-                        echo "<script> window.location.history(-1) ;</script>";
+                        echo "<script> window.location.history(-1) ; console.log();</script>";
                     }
                     echo "  <tr> <td> <label>";
                     echo $rows2['Codification'];
