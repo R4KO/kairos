@@ -1,0 +1,13 @@
+table
+{
+    background: #E9E9E9;
+    border-radius: 10px;
+    width: 500px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    padding: 45px 30px;
+    box-sizing: border-box;
+}
