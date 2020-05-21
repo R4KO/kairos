@@ -294,8 +294,11 @@ document.addEventListener("DOMContentLoaded", function addclick() {
             if (button === 'C' || button === 'D' || button === 'F') {
                 valeurs.action = button;
                 console.log(valeurs.action); // --> ça marche
-            } else {
-                getButtonValue();
+            }else if( button === 'back'){
+                window.location.assign("index.html");
+            }
+            else {
+                window.location.assign("test.php?action=" + valeurs.action + "&&test=" + valeurs.strV);
             }
         }
     });
@@ -417,9 +420,4 @@ function getKeyByValue(object, value) {
 function checkMarge(number, reference, marge) {
     // on créée un intervalle
     return (number > (reference - marge)) && (number < (reference + marge))
-}
-
-function getButtonValue() {
-    window.location.assign("test.php?action=" + valeurs.action + "&&test=" + valeurs.strV);
-
 }

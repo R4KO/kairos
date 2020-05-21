@@ -11,7 +11,7 @@
 
 <body>
 <header>
-    <a href="file:///Users/Maxime/Desktop/kairos/index.html"><img id="bann" src="img/banniere.png" alt="Bannière Institut Europpéen de Synergologie"></a>
+    <a href="index.html"><img id="bann" src="img/banniere.png" alt="Bannière Institut Europpéen de Synergologie"></a>
 
 </header>
 
@@ -64,42 +64,45 @@ if (!mysqli_query($conn, $sql)) {
 
 <table>
     <tr>
-        <td>
-            <label>Codification :</label>
-        </td>
+        <th>
+            <label>Codification:</label>
+        </th>
+        <th>
+            <label>Définition:</label>
+        </th>
+    </tr>
+
+
 
                 <?php
                 $result = mysqli_query($conn, $sql);
                 while ($rows2 = mysqli_fetch_array($result))
                 {
-                    echo " <td> <label>";
+                    echo "  <tr> <td> <label>";
                     echo $rows2['Codification'];
                     echo "</br></label></td>";
-                }
-                ?>
+                    echo "<td> <label>";
+                    $str2 = explode('_',$rows2['Codification']);
+                    if (isset($str2[5])){
+                        if ( $str2[5] == 56){
+                            echo" Avec la main droite : <br>";
+                        }else if ( $str2[5] == 66){
+                            echo" Avec la main gauche : <br>";
+                        }else if ( $str2[5] == 5666){
+                            echo" Avec les deux mains : <br>";
+                        }
 
-        <td>
-            <label>Définition :</label>
-        </td>
-        <td>
-            <label>
-                <?php
-                $result = mysqli_query($conn, $sql);
-                while ($rows2 = mysqli_fetch_array($result))
-                {
+                    }
                     echo $rows2['Horizon_de_sens'];
-                    echo "</br>";
+
+                    echo "</br></label></td>";
+                    echo"</tr>";
                 }
                 ?>
-            </label>
-        </td>
-    </tr>
 </table>
 
 </body>
 
 <script type="text/javascript" src="script/zoom.js"></script>
-<script type="text/javascript" src="script/script.js"></script>
-<script type="text/javascript" src="script/convert.js"></script>
 
 </html>

@@ -68,6 +68,10 @@ body {
     cursor: pointer;
 }
 
+#s:hover{
+    background-color: chartreuse;
+}
+
 #C:hover {
     background-color: #3acf6e;
 }

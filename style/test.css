@@ -4,10 +4,15 @@ table
     border-radius: 10px;
     width: 500px;
     height: 120px;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
+    margin-top: 3%;
+    margin-left: 35%;
+    position: center;
     padding: 45px 30px;
     box-sizing: border-box;
+}
+
+td {
+    height: 16.66%;
+    width: 50%;
+    text-align: center;
 }
