@@ -504,7 +504,7 @@ function insertImage(part, index) {
 }
 
 function printPosition(t) {
-    var position = document.getElementById('position');
+    //var position = document.getElementById('position');
 
     getPosition(t);
 }
@@ -530,6 +530,7 @@ function getZoneFrom(zone, x, y) {
             let key = getKeyByValue(zone, arr);
             valeurs.strV = key;
             console.log(key);
+            window.alert("Zone sélectionnée\nVous pouvez appuyer sur le bouton \"Valider\".");
         }
     });
 }
