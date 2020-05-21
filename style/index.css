@@ -41,7 +41,6 @@ body {
     bottom: 0;
     width: 100%;
     color: black;
-    text-align: center;
 }
 
 #div_geste {
@@ -105,10 +104,16 @@ body {
 }
 
 .bodyImage {
-    width: 100%;
-    height: auto;
-    /*height: 400px;*/
+
+
+    height: 400px;
     padding: 5px;
-    /*width: auto;*/
+    width: auto;
     margin: auto;
 }
+
+#tete{
+    width: 100%;
+    height: auto;
+}
+

@@ -506,7 +506,7 @@ function insertImage(part, index) {
 function printPosition(t) {
     var position = document.getElementById('position');
 
-    position.innerHTML = getPosition(t);
+    getPosition(t);
 }
 
 function getPosition(e) {
@@ -516,7 +516,7 @@ function getPosition(e) {
     // pour récupérer la bonne partie du corps
     getZoneFrom(zones[e.target.id], posXR, posYR);
 
-    return 'Image ' + e.target.id + '<br />Position X: ' + posXR + ' %<br />Position Y: ' + posYR + ' %';
+   // return 'Image ' + e.target.id + '<br />Position X: ' + posXR + ' %<br />Position Y: ' + posYR + ' %';
 }
 
 function getZoneFrom(zone, x, y) {
