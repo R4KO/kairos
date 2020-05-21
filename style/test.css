@@ -1,0 +1,23 @@
+table
+{
+    background: #E9E9E9;
+    border-radius: 10px;
+    width: 500px;
+    height: 120px;
+    margin-top: 3%;
+    margin-left: 35%;
+    position: center;
+    padding: 45px 30px;
+    box-sizing: border-box;
+}
+
+td {
+    height: 16.66%;
+    width: 50%;
+    text-align: center;
+}
+
+#boutton{
+    text-align: center;
+    margin-top: 3%;
+}
