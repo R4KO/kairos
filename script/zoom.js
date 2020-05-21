@@ -486,7 +486,6 @@ function addClickAttribute(part, index) {
 
             // faire apparaître le bouton back
             let backButton = document.getElementById("back");
-            console.log(backButton);
             backButton.style.display = "inline";
         }
     }
