@@ -18,6 +18,7 @@
 <br>
 <div id="outil">
     <p> Comment utiliser l'outil? Vous avez assisté à un geste de votre interlocuteur et vous voulez connaître sa signification? Selectionnez le type de puis la zone du geste où le geste a été effectué. Vous en apprendrez plus sur sa signification</p>
+
 </div>
 
 <?php
@@ -100,7 +101,9 @@ if (!mysqli_query($conn, $sql)) {
                 }
                 ?>
 </table>
-
+<div id="boutton">
+<a href="index.html"><button class="button" > Retour </button></a>
+</div>
 </body>
 
 <script type="text/javascript" src="script/zoom.js"></script>
